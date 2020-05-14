@@ -11,3 +11,5 @@ Secure your Wireless Sensor Network communication using Diffie-Helman Key Exchan
 ### Prerequisites
 
 Arduino and nRF24L01
+
+![Image description](https://i.imgur.com/o3rFCeP.jpg)
