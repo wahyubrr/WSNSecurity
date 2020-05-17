@@ -72,22 +72,28 @@ void setup(void) {
   radio.printDetails();
 
   // Initializing DHKE
-  int p = 17;
-  int g = 3;
-  int a = 2;
+  int p[16] = {17, 4, 5, 5, 6, 7, 7, 9,  9, 10, 10, 11, 11, 11, 11, 13};
+  int g[16] = {3, 3, 2, 3, 5, 3, 5, 2,  5, 3, 7, 2, 6, 7, 8, 7};
+  int a[16] = {2, 2, 2, 3, 4, 5, 3, 3,  2, 2, 4, 2, 4, 3, 1, 3};
+  int sharedKey[16];
   char c = 'c';
   printf("*** PRESS 'T' TO START KEY EXCHANGE\n");
   while(c != 'T') {
     c = toupper(Serial.read());
   }
-  transmit(p);
-  transmit(g);
-  int A = ipow(g, a) % p;
-  transmit(A);
-  int B = receive();
-  int sharedKey = ipow(B, a) % p;
-  printf("SHARED KEY: %d\n", sharedKey);
-  delay(1000);
+  for(int i = 0; i < 16; i++) {
+    transmit(p[i]);
+    transmit(g[i]);
+    int A = ipow(g[i], a[i]) % p[i];
+    transmit(A);
+    int B = receive();
+    sharedKey[i] = ipow(B, a[i]) % p[i];
+    printf("SHARED KEY: %d\n", sharedKey[i]);
+    delay(30);
+  }
+  for(int i = 0; i < 16; i++) {
+    printf("shared key %d: %d\n",i, sharedKey[i]);
+   }
 }
 
 void loop(void) {
@@ -136,7 +142,7 @@ int transmit(int data) {
     }
 
     // Try again 1s later
-    delay(1000);
+    delay(20);
   }
 }
 

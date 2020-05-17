@@ -87,17 +87,22 @@ void setup(void)
   radio.printDetails();
 
   //Initializing DHKE
-  int p, g, b = 3;
-  printf("Waiting for p...\n");
-  p = receive();
-  printf("Waiting for g...\n");
-  g = receive();
-  int A = receive();
-  int B = ipow(g, b) % p;
-  transmit(B);
-  int sharedKey = ipow(A, b) % p;
-  printf("SHARED KEY: %d\n", sharedKey);
-  delay(1000);
+  int p[16], g[16], b[16] = {3, 4, 3, 4, 2, 2, 1, 2,  3, 3, 3, 3, 2, 2, 2, 2};
+  int sharedKey[16];
+  for(int i = 0; i < 16; i++) {
+    printf("Waiting for p...\n");
+    p[i] = receive();
+    printf("Waiting for g...\n");
+    g[i] = receive();
+    int A = receive();
+    int B = ipow(g[i], b[i]) % p[i];
+    transmit(B);
+    sharedKey[i] = ipow(A, b[i]) % p[i];
+    printf("SHARED KEY: %d\n", sharedKey[i]);
+  }
+   for(int i = 0; i < 16; i++) {
+    printf("shared key %d: %d\n",i, sharedKey[i]);
+   }
 }
 
 void loop(void) {
@@ -146,7 +151,7 @@ int transmit(int data) {
     }
 
     // Try again 1s later
-    delay(1000);
+    delay(20);
   }
 }
 
