@@ -1,4 +1,5 @@
 #include <SPI.h>
+#include <AESLib.h>
 #include "nRF24L01.h"
 #include "RF24.h"
 #include "printf.h"
@@ -11,7 +12,7 @@
 
 RF24 radio(9,10);
 
-int sharedKey;
+uint8_t sharedKey[16];
 //int pow(int a, int b);
 //int transmit(int data);
 //int receive(int data);
@@ -75,7 +76,6 @@ void setup(void) {
   int p[16] = {17, 4, 5, 5, 6, 7, 7, 9,  9, 10, 10, 11, 11, 11, 11, 13};
   int g[16] = {3, 3, 2, 3, 5, 3, 5, 2,  5, 3, 7, 2, 6, 7, 8, 7};
   int a[16] = {2, 2, 2, 3, 4, 5, 3, 3,  2, 2, 4, 2, 4, 3, 1, 3};
-  int sharedKey[16];
   char c = 'c';
   printf("*** PRESS 'T' TO START KEY EXCHANGE\n");
   while(c != 'T') {
@@ -89,19 +89,59 @@ void setup(void) {
     int B = receive();
     sharedKey[i] = ipow(B, a[i]) % p[i];
     printf("SHARED KEY: %d\n", sharedKey[i]);
-    delay(30);
+    delay(100);
   }
   for(int i = 0; i < 16; i++) {
     printf("shared key %d: %d\n",i, sharedKey[i]);
-   }
+  }
 }
 
 void loop(void) {
-//  int data;
-//  transmit(7);
-//  transmit(10);
-//  data = receive();
-//  data = receive();
+  char c = "o";
+  char data[16] = "WahyuBerlianto"; //16 chars == 16 bytes
+  Serial.println();
+  Serial.println("==========ASN DEMO==========");
+  Serial.print("PLAIN TEXT: ");
+  Serial.println(data);
+  aes128_enc_single(sharedKey, data);
+  Serial.print("ENCRYPTED DATA: ");
+  Serial.println(data);
+  Serial.println("SENDING ENCRYPTED DATA...");
+  for(int i = 0; i < 16; i++) {
+    transmit(data[i]);
+  }
+  Serial.print("ENCRYPTED DATA SENT: ");
+  Serial.println();
+  delay(500);
+
+  for(int i = 0; i < 16; i++) {
+    data[i] = receive();
+    delay(10);
+  }
+  Serial.print("RECEIVED ENCRYPTED DATA: ");
+  Serial.println(data);
+  aes128_dec_single(sharedKey, data);
+  Serial.print("DECRYPTED DATA: ");
+  Serial.println(data);
+  Serial.println();
+  delay(500);
+
+  char data2[16] = "SatyaPradhana"; //16 chars == 16 bytes
+  Serial.print("PLAIN TEXT: ");
+  Serial.println(data2);
+  aes128_enc_single(sharedKey, data2);
+  Serial.print("ENCRYPTED DATA: ");
+  Serial.println(data2);
+  Serial.println("SENDING ENCRYPTED DATA...");
+  for(int i = 0; i < 16; i++) {
+    transmit(data2[i]);
+  }
+  Serial.println("ENCRYPTED DATA SENT...");
+  delay(500);
+  printf("*** PRESS 'T' TO RETRY AES\n");
+  while(c != 'T') {
+    c = toupper(Serial.read());
+  }
 }
 
 int transmit(int data) {

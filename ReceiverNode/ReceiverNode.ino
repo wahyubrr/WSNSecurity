@@ -1,4 +1,5 @@
 #include <SPI.h>
+#include <AESLib.h>
 #include "nRF24L01.h"
 #include "RF24.h"
 #include "printf.h"
@@ -11,8 +12,7 @@
 
 RF24 radio(9,10);
 
-int sharedKey;
-
+uint8_t sharedKey[16];
 //
 // Topology
 //
@@ -88,7 +88,6 @@ void setup(void)
 
   //Initializing DHKE
   int p[16], g[16], b[16] = {3, 4, 3, 4, 2, 2, 1, 2,  3, 3, 3, 3, 2, 2, 2, 2};
-  int sharedKey[16];
   for(int i = 0; i < 16; i++) {
     printf("Waiting for p...\n");
     p[i] = receive();
@@ -100,17 +99,52 @@ void setup(void)
     sharedKey[i] = ipow(A, b[i]) % p[i];
     printf("SHARED KEY: %d\n", sharedKey[i]);
   }
-   for(int i = 0; i < 16; i++) {
+  for(int i = 0; i < 16; i++) {
     printf("shared key %d: %d\n",i, sharedKey[i]);
-   }
+  }
 }
 
 void loop(void) {
-//  int data;
-//  data = receive();
-//  data = receive();
-//  transmit(7);
-//  transmit(10);
+  char c = "o";
+  char data[16];
+  for(int i = 0; i < 16; i++) {
+    data[i] = receive();
+    delay(10);
+  }
+  Serial.println();
+  Serial.println("==========ASN DEMO==========");
+  Serial.print("RECEIVED ENCRYPTED DATA: ");
+  Serial.println(data);
+  aes128_dec_single(sharedKey, data);
+  Serial.print("DECRYPTED DATA: ");
+  Serial.println(data);
+  Serial.println();
+  delay(500);
+
+  char data1[16] = "FahmiArdiansyah"; //16 chars == 16 bytes
+  Serial.print("PLAIN TEXT: ");
+  Serial.println(data1);
+  aes128_enc_single(sharedKey, data1);
+  Serial.print("ENCRYPTED DATA: ");
+  Serial.println(data1);
+  Serial.println("SENDING ENCRYPTED DATA...");
+  for(int i = 0; i < 16; i++) {
+    transmit(data1[i]);
+  }
+  Serial.println("ENCRYPTED DATA SENT...");
+  Serial.println();
+  delay(500);
+
+  for(int i = 0; i < 16; i++) {
+    data[i] = receive();
+    delay(10);
+  }
+  Serial.print("RECEIVED ENCRYPTED DATA: ");
+  Serial.println(data);
+  aes128_dec_single(sharedKey, data);
+  Serial.print("DECRYPTED DATA: ");
+  Serial.println(data);
+  delay(500);
 }
 
 int transmit(int data) {
@@ -151,7 +185,7 @@ int transmit(int data) {
     }
 
     // Try again 1s later
-    delay(20);
+    delay(10);
   }
 }
 
