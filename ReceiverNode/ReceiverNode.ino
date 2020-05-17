@@ -107,12 +107,13 @@ void setup(void)
 void loop(void) {
   char c = "o";
   char data[16];
+  
+  Serial.println();
+  Serial.println("==========AES DEMO==========");
   for(int i = 0; i < 16; i++) {
     data[i] = receive();
     delay(10);
   }
-  Serial.println();
-  Serial.println("==========AES DEMO==========");
   Serial.print("RECEIVED ENCRYPTED DATA: ");
   Serial.println(data);
   aes128_dec_single(sharedKey, data);
