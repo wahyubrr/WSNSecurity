@@ -100,7 +100,7 @@ void loop(void) {
   char c = "o";
   char data[16] = "WahyuBerlianto"; //16 chars == 16 bytes
   Serial.println();
-  Serial.println("==========ASN DEMO==========");
+  Serial.println("==========AES DEMO==========");
   Serial.print("PLAIN TEXT: ");
   Serial.println(data);
   aes128_enc_single(sharedKey, data);

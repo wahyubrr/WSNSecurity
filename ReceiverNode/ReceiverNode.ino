@@ -112,7 +112,7 @@ void loop(void) {
     delay(10);
   }
   Serial.println();
-  Serial.println("==========ASN DEMO==========");
+  Serial.println("==========AES DEMO==========");
   Serial.print("RECEIVED ENCRYPTED DATA: ");
   Serial.println(data);
   aes128_dec_single(sharedKey, data);

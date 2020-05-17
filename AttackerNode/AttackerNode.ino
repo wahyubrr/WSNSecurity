@@ -74,16 +74,12 @@ void setup(void) {
 }
 
 void loop(void) {
-  int data[16];
-  bool isLoop = 1;
-  for(int i = 0; i < 16; i++) {
-    data[i] = receive();
+  int data;
+  for(;;) {
+    data = receive();
+    Serial.print("Data received: ");
+    Serial.println(data);
   }
-  printf("All Captured Data from PUBLIC CHANNEL:\n");
-  for(int i = 0; i < 4; i++) {
-    printf("%d\n", data[i]);
-  }
-  while(1);
 }
 
 int receive() {
