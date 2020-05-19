@@ -1,0 +1,261 @@
+Transmitting Node...
+
+*** PRESS 'T' TO START KEY EXCHANGE
+Now sending '17'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '3'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '9'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '10' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 15
+Now sending '4'...failed.
+
+Failed, response timed out.
+
+Now sending '4'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '3'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '1'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '1' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 1
+Now sending '5'...failed.
+
+Failed, response timed out.
+
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '2'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '4'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '3' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 4
+Now sending '5'...failed.
+
+Failed, response timed out.
+
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '3'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '2'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '1' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 1
+Now sending '6'...failed.
+
+Failed, response timed out.
+
+Now sending '6'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '1'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '1' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 1
+Now sending '7'...failed.
+
+Failed, response timed out.
+
+Now sending '7'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '3'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '2' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 4
+Now sending '7'...failed.
+
+Failed, response timed out.
+
+Now sending '7'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '6'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '5' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 6
+Now sending '9'...failed.
+
+Failed, response timed out.
+
+Now sending '9'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '2'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '8'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '4' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 1
+Now sending '9'...failed.
+
+Failed, response timed out.
+
+Now sending '9'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '7'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '8' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 1
+Now sending '10'...failed.
+
+Failed, response timed out.
+
+Now sending '10'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '3'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '9'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '7' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 9
+Now sending '10'...failed.
+
+Failed, response timed out.
+
+Now sending '10'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '7'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '1'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '3' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 1
+Now sending '11'...failed.
+
+Failed, response timed out.
+
+Now sending '11'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '2'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '4'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '8' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 9
+Now sending '11'...failed.
+
+Failed, response timed out.
+
+Now sending '11'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '6'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '9'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '3' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 4
+Now sending '11'...failed.
+
+Failed, response timed out.
+
+Now sending '11'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '7'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '2'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '5' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 4
+Now sending '11'...failed.
+
+Failed, response timed out.
+
+Now sending '11'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '8'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '8'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Got payload '9' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 9
+Now sending '13'...failed.
+
+Failed, response timed out.
+
+Now sending '13'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '7'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Now sending '5'...ok...Got response ACK: 1 with round-trip delay of 22ms
+Got payload '10' with size of 2 bytes Sent ACK response.
+
+SHARED KEY: 12
+shared key 0: 15
+shared key 1: 1
+shared key 2: 4
+shared key 3: 1
+shared key 4: 1
+shared key 5: 4
+shared key 6: 6
+shared key 7: 1
+shared key 8: 1
+shared key 9: 9
+shared key 10: 1
+shared key 11: 9
+shared key 12: 4
+shared key 13: 4
+shared key 14: 9
+shared key 15: 12
+
+==========AES DEMO==========
+PLAIN TEXT: WahyuBerlianto
+ENCRYPTED DATA: X⸮⸮⸮J¬|⸮⸮⸮P;9⸮
+SENDING ENCRYPTED DATA...
+Now sending '88'...failed.
+
+Failed, response timed out.
+
+Now sending '88'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-3'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-1'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '-93'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '74'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-62'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '-84'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '124'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-87'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '-119'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '19'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-109'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '80'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '59'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '57'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-84'...ok...Got response ACK: 1 with round-trip delay of 21ms
+ENCRYPTED DATA SENT:
+Got payload '105' with size of 2 bytes Sent ACK response.
+
+Got payload '-63' with size of 2 bytes Sent ACK response.
+
+Got payload '69' with size of 2 bytes Sent ACK response.
+
+Got payload '99' with size of 2 bytes Sent ACK response.
+
+Got payload '-57' with size of 2 bytes Sent ACK response.
+
+Got payload '71' with size of 2 bytes Sent ACK response.
+
+Got payload '69' with size of 2 bytes Sent ACK response.
+
+Got payload '-17' with size of 2 bytes Sent ACK response.
+
+Got payload '-26' with size of 2 bytes Sent ACK response.
+
+Got payload '110' with size of 2 bytes Sent ACK response.
+
+Got payload '104' with size of 2 bytes Sent ACK response.
+
+Got payload '-124' with size of 2 bytes Sent ACK response.
+
+Got payload '-107' with size of 2 bytes Sent ACK response.
+
+Got payload '-78' with size of 2 bytes Sent ACK response.
+
+Got payload '23' with size of 2 bytes Sent ACK response.
+
+Got payload '-111' with size of 2 bytes Sent ACK response.
+
+RECEIVED ENCRYPTED DATA: i⸮Ec⸮GE⸮⸮nh⸮⸮⸮⸮
+DECRYPTED DATA: FahmiArdiansyah
+
+PLAIN TEXT: SatyaPradhana
+ENCRYPTED DATA: ⸮Pq D⸮⸮D?F~E⸮9
+SENDING ENCRYPTED DATA...
+Now sending '-120'...failed.
+
+Failed, response timed out.
+
+Now sending '-120'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '80'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '113'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '14'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '32'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '68'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '26'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-120'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '-47'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '68'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '63'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '70'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '126'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '69'...ok...Got response ACK: 1 with round-trip delay of 20ms
+Now sending '-118'...ok...Got response ACK: 1 with round-trip delay of 21ms
+Now sending '57'...ok...Got response ACK: 1 with round-trip delay of 21ms
+ENCRYPTED DATA SENT...
+*** PRESS 'T' TO RETRY AES

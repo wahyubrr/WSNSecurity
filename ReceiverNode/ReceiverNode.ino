@@ -44,9 +44,7 @@ void setup(void)
 
   Serial.begin(57600);
   printf_begin();
-  printf("\n\rRF24/examples/GettingStarted/\n\r");
-  printf("ROLE: %s\n\r",role_friendly_name[role]);
-  printf("*** PRESS 'T' to begin transmitting to the other node\n\r");
+  printf("Receiving Node...\n");
 
   //
   // Setup and configure rf radio
@@ -182,18 +180,17 @@ int transmit(int data) {
       radio.read( &ack, sizeof(bool) );
 
       // Spew it
-      printf("Got response ACK: %d\n",ack);
+      printf("Got response ACK: %d with round-trip delay of %dms\n",ack, millis()-started_waiting_at);
     }
 
     // Try again 1s later
-    delay(10);
+    delay(20);
   }
 }
 
 int receive() {
   radio.startListening();
   bool incoming = 0;
-  printf("waiting for data...\n");
   while(!incoming) {
     if(radio.available()) {
       incoming = 1;
@@ -207,7 +204,7 @@ int receive() {
     done = radio.read( &dataReceived, sizeof(int) );
 
     // Spew it
-    printf("Got payload '%d'...",dataReceived);
+    printf("Got payload '%d' with size of %d bytes ",dataReceived, sizeof(dataReceived));
 
     // Delay just a little bit to let the other unit
     // make the transition to receiver

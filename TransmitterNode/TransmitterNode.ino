@@ -32,7 +32,7 @@ void setup(void) {
 
   Serial.begin(57600);
   printf_begin();
-  printf("Transmitting Node...");
+  printf("Transmitting Node...\n");
 
   //
   // Setup and configure rf radio
@@ -82,6 +82,7 @@ void setup(void) {
     c = toupper(Serial.read());
   }
   for(int i = 0; i < 16; i++) {
+      delay(50);
     transmit(p[i]);
     transmit(g[i]);
     int A = ipow(g[i], a[i]) % p[i];
@@ -89,7 +90,6 @@ void setup(void) {
     int B = receive();
     sharedKey[i] = ipow(B, a[i]) % p[i];
     printf("SHARED KEY: %d\n", sharedKey[i]);
-    delay(100);
   }
   for(int i = 0; i < 16; i++) {
     printf("shared key %d: %d\n",i, sharedKey[i]);
@@ -178,7 +178,7 @@ int transmit(int data) {
       radio.read( &ack, sizeof(bool) );
 
       // Spew it
-      printf("Got response ACK: %d\n",ack);
+      printf("Got response ACK: %d with round-trip delay of %dms\n",ack, millis()-started_waiting_at);
     }
 
     // Try again 1s later
@@ -189,7 +189,6 @@ int transmit(int data) {
 int receive() {
   radio.startListening();
   bool incoming = 0;
-  printf("waiting for data...\n");
   while(!incoming) {
     if(radio.available()) {
       incoming = 1;
@@ -203,7 +202,7 @@ int receive() {
     done = radio.read( &dataReceived, sizeof(int) );
 
     // Spew it
-    printf("Got payload '%d'...",dataReceived);
+    printf("Got payload '%d' with size of %d bytes ",dataReceived, sizeof(dataReceived));
 
     // Delay just a little bit to let the other unit
     // make the transition to receiver
